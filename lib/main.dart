@@ -596,7 +596,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             text: TextSpan(
                               children: [
                                 TextSpan(
-                                  text: '     ${ItemPrice}',
+                                  text: '     $ItemPrice',
                                   style: GoogleFonts.poppins(
                                       color: Colors.black,
                                       fontSize: 14,
