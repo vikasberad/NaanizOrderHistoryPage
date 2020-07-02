@@ -11,12 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Naaniz Screen',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter TicketView Demo'),
+      home: MyHomePage(title: 'Naaniz order history'),
     );
   }
 }
@@ -79,12 +79,27 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisSize: MainAxisSize.min,
             ),
+            SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+            ),
             Expanded(
               child: Container(
                 margin: EdgeInsets.all(10),
                 child: _getTicketReceiptView(),
               ),
-            )
+            ),
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.all(10),
+                child: _getTicketReceiptView1(),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.all(10),
+                child: _getTicketReceiptView2(),
+              ),
+            ),
           ],
         ),
       ),
@@ -92,6 +107,220 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget _getTicketReceiptView() {
+    return Container(
+      child: TicketView(
+        //    backgroundPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 30),
+        backgroundColor: Color(0xffF9F9F9),
+        contentPadding: EdgeInsets.symmetric(vertical: 30, horizontal: 0),
+        drawArc: false,
+        triangleAxis: Axis.vertical,
+        borderRadius: 9,
+        drawDivider: true,
+        trianglePos: 0,
+        dividerStrokeWidth: 5,
+        drawShadow: true,
+        // dividerColor: Color(0xffF9F9F9),
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                flex: 5,
+                child: Container(
+                  padding: EdgeInsets.all(24),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Text(
+                            'Deliver',
+                            style: GoogleFonts.poppins(
+                                color: Color(0xffFE4E74),
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Expanded(child: Container()),
+                        ],
+                      ),
+                      SizedBox(height: 7),
+                      Row(
+                        children: <Widget>[
+                          Text(
+                            'Item Name',
+                            style: GoogleFonts.poppins(
+                                color: Color(0xff5D5D5D),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          Expanded(child: Container()),
+                          Text(
+                            '------------',
+                            style: GoogleFonts.poppins(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal),
+                          ),
+                          RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: '     ${ItemPrice}',
+                                  style: GoogleFonts.poppins(
+                                      color: Colors.black,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                                TextSpan(
+                                  text: 'Kg',
+                                  style: GoogleFonts.poppins(
+                                      color: Colors.black,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        children: <Widget>[
+                          Text(
+                            'Item Name',
+                            style: GoogleFonts.poppins(
+                                color: Color(0xff5D5D5D),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          Expanded(child: Container()),
+                          Text(
+                            '------------',
+                            style: GoogleFonts.poppins(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal),
+                          ),
+                          RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: '     ${ItemPrice}',
+                                  style: GoogleFonts.poppins(
+                                      color: Colors.black,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                                TextSpan(
+                                  text: 'Kg',
+                                  style: GoogleFonts.poppins(
+                                      color: Colors.black,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        children: <Widget>[
+                          Text(
+                            'Item Name',
+                            style: GoogleFonts.poppins(
+                                color: Color(0xff5D5D5D),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          Expanded(child: Container()),
+                          Text(
+                            '------------',
+                            style: GoogleFonts.poppins(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal),
+                          ),
+                          SizedBox(height: 10),
+                          RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: '     ${ItemPrice}',
+                                  style: GoogleFonts.poppins(
+                                      color: Colors.black,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                                TextSpan(
+                                  text: 'Kg',
+                                  style: GoogleFonts.poppins(
+                                      color: Colors.black,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 18),
+                      Row(
+                        children: <Widget>[
+                          SizedBox(height: 10),
+                          RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: 'Kg',
+                                  style: GoogleFonts.poppins(
+                                      color: Color(0xffFE4E74),
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.normal),
+                                ),
+                                TextSpan(
+                                  text: '${TotalPrice}',
+                                  style: GoogleFonts.poppins(
+                                      color: Color(0xffFE4E74),
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.normal),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Expanded(child: Container()),
+                          Container(
+                            width: 100,
+                            height: 35,
+                            child: FlatButton(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0),
+                                  side: BorderSide(color: Colors.red)),
+                              color: Colors.white,
+                              textColor: Color.fromARGB(255, 254, 78, 116),
+                              padding: EdgeInsets.all(8.0),
+                              onPressed: () {},
+                              child: Text(
+                                "Completed",
+                                style: TextStyle(
+                                  fontSize: 14.0,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _getTicketReceiptView1() {
     return Container(
       width: 354,
       height: 222,
@@ -307,7 +536,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget _getTicketReceiptView1() {
+  Widget _getTicketReceiptView2() {
     return Container(
       width: 354,
       height: 222,
