@@ -91,53 +91,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  int _ticketCount = 0;
-  Container counterWidget() {
-    return Container(
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          IconButton(
-              icon: Icon(
-                Icons.chevron_left,
-                color: Colors.grey,
-                size: 30,
-              ),
-              onPressed: () {
-                if (_ticketCount > 0) {
-                  setState(() {
-                    _ticketCount--;
-                  });
-                }
-              }),
-          Expanded(
-            child: Text(
-              "$_ticketCount",
-              // ticket.selectedTickets.value.toString(),
-              maxLines: 1,
-              softWrap: true,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(color: Colors.black, fontSize: 30),
-            ),
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.chevron_right,
-              color: Colors.grey,
-              size: 30,
-            ),
-            onPressed: () {
-              setState(() {
-                _ticketCount++;
-              });
-            },
-          ),
-        ],
-      ),
-    );
-  }
-
   Widget _getTicketReceiptView() {
     return Container(
       width: 354,
